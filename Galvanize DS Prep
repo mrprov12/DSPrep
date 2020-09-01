@@ -1,0 +1,177 @@
+# What is Data Science?
+data types: working with text and data
+variables: storing data 
+lists: working with data in an ordered collection
+dictionaries: representing data as a collection of attributes
+loops and iteration: repeating a sequence of instructions 
+data visualization: using plots to display data 
+functions: defining and running specific procedures in code 
+
+______________________________________________________________________________________________________
+
+# String Methods
+[instance of dataype].[method]()
+
+str.upper() 
+str.lower() 
+str.title() 
+str.endswith()  
+  returns a boolean 
+str.replace(x, y)
+  ie. "Homer" ->> replace('o', 'O')
+      returns "HOmer"
+help(str)
+   returns directory of str commands (exit w/ q)
+str.capitalize()
+
+string slicing:
+  [2:4] = [incl, ecl]
+  ie. in carrot, would return 'rr'
+  [4] would return 4th char
+ 
+concatenation:
+  'xyz' + '123'
+  returns 'xyz123'
+  
+fstring: print(f"... {} ...")
+
+.split([separator [, maxsplit]])
+  braks up str at specified separator
+  returns list of stirngs
+  seperator (optional): if not specified, any whitespace
+  maxsplit (optional): defines max number of splits; default is -1 meaning no limit
+  
+.count(substring, start=..., end=...)
+  searches substring and returns # of instances
+
+.format
+  complicated ***
+
+.index(substring[, start[, end]])
+  substring: to be search in str
+  start/end: (optional) within str [st:end]
+  returns lowed index in str where found
+
+.isalnum()
+  returns True is all char alphaneumeric
+  
+.isalpha()
+  returns True if all char in alphabets
+
+.is digit()
+
+.isnumeric()
+
+.join(iterable)
+  returns str by joining all elelments of an iterable, separated by a str separator (concatenates)
+  data types: list, tuple, string, dict, set
+  file obj + obj defined with __iter__() or __getitem()__ method
+
+.replace(old, new[, count])
+  returns copy of str where all occuranes of a subsring are replaced by another substring
+  old: substring to replace
+  new: new substring to replace old
+  count: (optional) number of times to replace old with new (if not specified, will replace all)
+  
+______________________________________________________________________________________________________
+  
+# Numbers and Booleans
+
+______________________________________________________________________________________________________
+
+# Jupyter Notebooks
+
+______________________________________________________________________________________________________
+
+# Lists
+
+______________________________________________________________________________________________________
+
+# Dictionaries
+
+______________________________________________________________________________________________________
+
+# Variables
+
+______________________________________________________________________________________________________
+
+# Scalar Types
+ints, floats, bools, str, None, complex, bytes
+scalar type: holds a single value (vs. collection type, which holds many values and can be changed w/p id value change -> ie. not being destroyed and remade)
+  scalar types in python are immutable, they are detroyed and remade everytime the value is reassigned
+int
+  can represent a value that is countable
+  are only positive or negative whole numbers
+  discrete values
+  int(x) to cast an int or round a float
+  indexing with square brackets requires int
+float
+  decimal numbers
+  measurments, result of division, or calculations involving other floats
+  continuous values
+  float() to cast as float
+  underfloq
+    can occur when attempting to calculate a number smaller than what can be stored in memory
+    ints are stored differently than floats
+      ints are direct representation of binary form
+    **dont really understand this
+    can cause issues with relaly small numbers
+ boolean
+  True or False
+  1 or 0
+  full or empty values
+  binary in nature
+  not negates bool
+  result of <, >, >=, <=, == is always boolean
+string
+  collection of characters
+  concatenation +
+  str() to cast
+None
+  describes the absence of a value
+  functions auto return None if no return statement or empty return statement
+  None can be used as a placeholder
+  can sub for a n/a data (missing data)
+ 
+______________________________________________________________________________________________________
+
+# Numpy
+numpy arrays
+  CAN ONLY INCLUDE A SINGLE DATA TYPE
+  when + doesnt concatenate, adds each instance to its respecive pair
+  ie. [1,2,3] + [1,2,3] = [2,4,6]
+  np.array()
+  ie. np_height_in = np.array(height_in)
+  can multiply, etc each entry by an operator
+  ie. np_height_m = np.array(height_in) * 0.0254
+      bmi = np_weight_kg/(np_height_m**2)
+  can create array of bools and subset it within another array, and itll only return the values that match the True values
+  ie. light = np.array(bmi<21). #creates bool array of true false for those that are <21
+      print(bmi[light])         #subsets in bmi array to only return bmis that fit the True values
+  can also subset like normal lists
+  ** subsetting ([xyz])
+  ie. array([100:111]) returns enteries from index 100 to 110 inclusive
+  
+2D numpy arrays
+  .shape => returns (rows, cols); not a method, is an attribute
+  array[0][2] == array[0,2]
+  calling just cols or rows is easy -> array[r:c] with slicing telling python to include all
+  ie. np_baseball[:,1] select just the 2nd column
+      print(np_baseball[123,0]) print the 124th player's height
+  Can create an array of conversions by row/col and multiply
+    ie. array with 3 cols, new array with conversion factors in 3 cols, multiply to convert whole array
+
+basic statistics
+  np.mean(array[:,0])
+  np.median(array[:])
+  np.corrcoef(array1, array2). see if 2 array rows/cols are correlaed
+  np.std(array) std dev
+  np.sum()
+  np.sort()
+  Very fast calculations because all 1 data type
+  
+  ______________________________________________________________________________________________________
+# Basic Operatorsy
+  
+  
+  
