@@ -73,22 +73,101 @@ fstring: print(f"... {} ...")
   new: new substring to replace old
   count: (optional) number of times to replace old with new (if not specified, will replace all)
   
-______________________________________________________________________________________________________
-  
-# Numbers and Booleans
 
 ______________________________________________________________________________________________________
 
 # Jupyter Notebooks
-
+adding cell: b
+deleting cell: (cmd+z) is different; escape mode + x --> z
+shortcut menu: h
+type code: esc mode + y
+markdown: esc mode + m
+shift + enter
 ______________________________________________________________________________________________________
 
 # Lists
+x = list(y), x = [] ->> defining a list
+list[x] ->> call x index from list
+indicies = range(len(list))
+list(fliter9func, iterable)): returns True elements into array
+accessing multpile elements: list[0:2] = list[incl:excl]
 
+.append(item)
+  item added to end of th elist
+  can be any datatype
+  returns None
+.clear()
+  removes all items from the list
+.copy()
+  copies old list to new list, changes to new list won't effect old list (unlike =)
+  also can use slicing (new_list = list[:])
+.count(element)
+  returns # of times element is in list
+  can be used with nested lists and tuples
+.extend(iterable)
+  adds all the elements of an iterable (list, tuple, string, etc) to the end of the list
+  Modifies original list, does not return value
+  also can append all elements to list using: + +=
+  list slicing: 
+    a = [1,2]; b = [3,4]
+    a[len(a):] = b
+    a = [1, 2, 3, 4]
+  merges rather than append
+.index(element, start, end)
+  returns the index of the specified element in the list
+  element: element to be searched
+  start (op): start from this index
+  end (op): search up to this index
+  returns index of given element OR ValueEror if not found
+  *only returns 1st occurane of element
+.insert(i, elem)
+  inserts element into list @ ith index
+  all elements after elem shifted to right
+  returns None, updates current list
+  *can insert Tuples as elements
+.pop(index)
+  removes and returns an element at a given index from a list
+  if index not passed, returns for (-1)
+.remove(element)
+  removes the first matching element (which is passed as an arg) from list
+  throws error if element DNE
+  returns None, or error
+  if need to delete elements based on index, use .pop()
+.reverse()
+  reverses the elements of the list
+  returns None
+  can also do with slicing operator: reversed_list = list [::-1]
+  accessing items in reversed order: for x in reversed(list):
+.sort(key=..., reverse=...)
+  key (op): func that serves as key for he sort comparison
+  reverse (op): if True, sorted list is sorted in descending order
+  changes original list
+  no rreturn
+  to return sorted list (with original unchanged) use sorted()
+  ie. list.sort(key = len, reverse = true/false)
+      OR sorted(list, key=len)
+  
 ______________________________________________________________________________________________________
 
 # Dictionaries
+func(arg, arg)['name']
 
+.clear()
+  removes all items from dict
+.copy()
+  returns shallow copy of dict
+  doesn't change original dict (unlike =)
+.fromkeys(sequence[, value])
+  creates new dict from given sequence of elements with value provided by user
+  sequence: sequence of elements which is to be used as keys for new dict
+  value (op): value which is set to each element of dict
+.get(key[, value])
+  returns value for specific key, if key is in dict
+  key: key to be searched in dict
+  value (op): value to be returned if key is not found; defaults to None
+.items()
+  returns a view object that displays a list of dict key, value tuple pairs
+  
 ______________________________________________________________________________________________________
 
 # Variables
@@ -171,6 +250,23 @@ basic statistics
   Very fast calculations because all 1 data type
   
   ______________________________________________________________________________________________________
+  
+# Numbers and Booleans
+= += -= *= /= **=
++ - * / // **
+// floor division
+% remainder (mod)
+== finds relation between two booleans, relational operator
+!= result type: boool; "not equal to"
+< <= > >=
+and, or ->> bool op used to preform logical conjuction
+not: returns True when op is false orr 0, vice versa
+del: removes item/element at a specified index location from lis, not returned; takes index as arg, deletes itema at index
+int: # w/o decimal, +/-
+float: # with decimale, +/- (always returned by /)
+True: bool(1)
+False: 0, None, len() ie. [] or " ", bool(0)
+
 # Basic Operators
 // floor division
   if either is a float, will return a float
@@ -191,3 +287,8 @@ Logical ops
 comparison ops
   < > <= >= == !=
 
+  ______________________________________________________________________________________________________
+
+# Control Flow
+if (any expression that resolves as either True or False) --> condition
+else ==> under all other conditions
