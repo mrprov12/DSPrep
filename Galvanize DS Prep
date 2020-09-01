@@ -171,7 +171,23 @@ basic statistics
   Very fast calculations because all 1 data type
   
   ______________________________________________________________________________________________________
-# Basic Operatorsy
-  
-  
-  
+# Basic Operators
+// floor division
+  if either is a float, will return a float
+% modulus
+  trial division: see if divides in evenly, common step to find primes and all divisors of given num
+  parity: mod 2, whether an integer is even or odd  
+  if either is a float, will return a float
+Order of op
+  PEMDAS, M includes %
+  if same precedence, left to right
+Logical ops
+  and, or, !
+  btwise: & = and, |. = or, ~ = not
+    exclusive or (^) = only when 1 op is true (vs or where bith can be true
+  not evaluated 1st, then and, or last
+  bitwise 1st, then logical op
+  excl or befor or
+comparison ops
+  < > <= >= == !=
+
