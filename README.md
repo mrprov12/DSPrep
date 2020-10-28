@@ -12,9 +12,12 @@ ________________________________________________________________________________
 # String Methods
 [instance of dataype].[method]()
 
-str.upper() 
-str.lower() 
-str.title() 
+str.upper() <br>
+
+str.lower() <br>
+
+str.title() <br>
+
 str.endswith()  
   returns a boolean 
 str.replace(x, y)
@@ -96,14 +99,18 @@ accessing multpile elements: list[0:2] = list[incl:excl]
   item added to end of th elist
   can be any datatype
   returns None
+  
 .clear()
   removes all items from the list
+  
 .copy()
   copies old list to new list, changes to new list won't effect old list (unlike =)
   also can use slicing (new_list = list[:])
+  
 .count(element)
   returns # of times element is in list
   can be used with nested lists and tuples
+  
 .extend(iterable)
   adds all the elements of an iterable (list, tuple, string, etc) to the end of the list
   Modifies original list, does not return value
@@ -113,6 +120,7 @@ accessing multpile elements: list[0:2] = list[incl:excl]
     a[len(a):] = b
     a = [1, 2, 3, 4]
   merges rather than append
+  
 .index(element, start, end)
   returns the index of the specified element in the list
   element: element to be searched
@@ -120,19 +128,23 @@ accessing multpile elements: list[0:2] = list[incl:excl]
   end (op): search up to this index
   returns index of given element OR ValueEror if not found
   *only returns 1st occurane of element
+  
 .insert(i, elem)
   inserts element into list @ ith index
   all elements after elem shifted to right
   returns None, updates current list
   *can insert Tuples as elements
+  
 .pop(index)
   removes and returns an element at a given index from a list
   if index not passed, returns for (-1)
+  
 .remove(element)
   removes the first matching element (which is passed as an arg) from list
   throws error if element DNE
   returns None, or error
   if need to delete elements based on index, use .pop()
+  
 .reverse()
   reverses the elements of the list
   returns None
