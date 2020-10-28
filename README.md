@@ -322,4 +322,27 @@ comparison ops<br>
 if (any expression that resolves as either True or False) --> condition<br>
 else ==> under all other conditions<br>
 
+
   ______________________________________________________________________________________________________
+
+# List Basics
+A list is a collection of arbitrary objects, often called an array in other programming languages. The contents of a list can be thought of as ordered, in that a list guarantees that its contents are numerically indexed. The items, or elements of a list can be accessed by the numeric index. In Python, a list is mutable in the sense that its contents can be rearranged, replaced, or deleted. A list can be nested to arbitrary depth. The list datatype is the primary construct on which you will perform iteration, or going item-by-item across a data structure.<br>
+
+creating a list:
+  some_list = []
+  some_list = [x,y,z]
+  some_list = list()
+  some_list = list(some_other_collection)
+
+concatenating lists:
+  can concatenate lists with '+' operator
+
+''' python
+first_list = ['This', 'is', 'list', '1']
+second_list = ['add', 'me', 'to', 'list', '1']
+
+concatenated_list = first_list + second_list
+
+# This will print ['This', 'is', 'list', '1', 'add', 'me', 'to', 'list', '1']
+print(concatenated_list)
+'''
