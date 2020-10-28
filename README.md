@@ -202,6 +202,212 @@ accessing multpile elements: list[0:2] = list[incl:excl]<br>
 ______________________________________________________________________________________________________
 
 # Dictionaries
+### consist of key/value pairs 
+  d = { 
+    "key" : "value",
+     "key2" : "valu2",
+      etc
+      }
+
+  d = dict()
+
+  keys must be an immutable type (int, float, string, tuple, etc)
+
+  keys must be unique, only one occurance per dict
+
+  value type can be any, including objects defined by the user
+
+  dictionaries make good containers for analyzing data
+
+  dicts are NOT ORDERED, non-ordinal
+
+#### general example:
+  ```python
+  some_dict = {
+             key1: value1,
+             key2: value2,
+             key3: value3
+             }
+
+```
+
+#### specific example:
+```python
+a_dict = {
+          'hello': 1234,
+          3: tuple([1,2,3,4]),
+          4.716: ['a', 'b', 'c', 'd'],
+          True: {1:'a', 2:'b', 3:'c'},
+          (1,2,3,4):'hey'
+         }
+
+print(a_dict)
+```
+
+#### specific example 2:
+```python
+item1, price1 = 'salt', 2.31
+item2, price2 = 'butter', 3.23
+item3, price3 = 'flour', 5.67
+item4, price4 = 'baking soda', 3.20
+item5, price5 = 'sugar', 3.50
+
+baking_dict = {
+               item1: price1,
+               item2: price2,
+               item3: price3,
+               item4: price4,
+               item5: price5,
+      }
+
+print(baking_dict)
+```
+### Example from question 3 on adding key value pairs from learn
+```python
+''' Write a function called letter_idx and will track the indices of where the vowels occur in a string. This function should:
+
+Take a word or a sentence as an argument
+Return a dictionary with keys representing the vowels that occur in that sentence, and values representing the indices where that vowel occurs in the word or sentence
+For this exercise the letter y is considered a vowel
+For example:
+
+letter_idx("Hello there!") ---> {'e' : [1, 8, 10], 'o' : [4]}'''
+
+#solution 1:
+def letter_idx(s):
+    vowels_and_indicies = {}
+    
+    for char in(s):
+        if char in "aeiouyAEIOUY":
+            vow_ind = []
+            for i, c in enumerate(s):
+                if c == char:
+                    vow_ind.append(i)
+            vowels_and_indicies[char] = vow_ind
+                    
+                    
+    return vowels_and_indicies
+
+#solution2:
+def letter_idx(word):
+    # This is the vowel index accumulator
+    vowel_dict = {}
+
+    # Use 'enumerate' since both index and character are used
+    # Use 'word.lower()' since the function should be case-insensitive
+    for idx, char in enumerate(word.lower()):
+        if char in "aeiouy":
+            # If the vowel is already in the dictionary, append the index
+            if char in vowel_dict:
+                vowel_dict[char].append(idx)
+            # Otherwise, initialize the dictionary key with a new list containing the index
+            else:
+                vowel_dict[char] = [idx]
+
+    return vowel_dict
+
+#solution3
+def letter_idx(word):
+    vowel_dict = {}
+
+    for idx, char in enumerate(word.lower()):
+        if char in "aeiouy":
+            vowel_dict[char] = vowel_dict.get(char, []) + [idx]
+
+    return vowel_dict
+
+    '''The dict.get(key, init) method will return the value in a dictionary corresponding to key if the key is present in the dictionary, otherwise the init value will be returned. This allows you to set the default value to the empty list [], and then concatenate [idx]. Note: if init is not specified, the default value will be None.'''
+
+```
+
+### accessing dict values
+can access key/values using the following with iteration:
+```python
+    for key, val in d.items()
+```
+
+#### example 2:
+
+``` python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+d = {}
+
+# the second argument to enumerate starts counting i at 1
+for i, letter in enumerate(alphabet, 1):
+    d[i] = letter
+
+# find the 13th letter
+thirteenth = d[13]
+
+print(thirteenth)
+```
+
+note: check for membership before attempting to access a dict key to avoid throwing errors:
+
+``` python
+d = {'dog':'cat', 'frog':'gnat'}
+
+# this will error
+if 'snake' in d:
+    print(d['snake'])
+else:
+    print('there is no snake in here')
+```
+
+### dict as accumulators
+
+``` python
+#As with the other built-in data types in python, the dict type can be used as an accumulator. Consider the function below that unpacks a list of tuples into a dict accumulator.
+
+def return_dict_of_tuples(list_of_tups):
+    d = {}
+
+    for tup in list_of_tups:
+        d[tup[0]] = tup[1]
+
+    return d
+
+
+list_of_tups = [('ford', 20),
+('chevy', 30), ('toyota', 40), ('volkswagen', 50)]
+
+print(return_dict_of_tuples(list_of_tups))
+```
+
+### creating a word count dictionary example from learn
+
+```python
+rand_paragraph = '''"New York City member-supported radio station WFUV named Free Yourself Up its New Dig, aka Album of the Week. On the album, the band "strives to empower and liberate in an age of turmoil," says FUV. "It’s a confident collection of songs that reflects the quartet’s nearly decade-and-a-half of music making. (cite nonsuch records announcement New York City member-supported radio station WFUV named Free Yourself Up its New Dig, aka Album of the Week. On the album, the band "strives to empower and liberate in an age of turmoil," says FUV. "It’s a confident collection of songs that reflects the quartet’s nearly decade-and-a-half of music making."'''
+
+def get_clean_word_list(paragraph):
+    to_remove = ['"', '(', ')', '.']
+    cleaned = paragraph[:]
+    for punc in to_remove:
+        cleaned = cleaned.replace(punc, '')
+    cleaned = cleaned.lower()
+    return cleaned.split(' ')
+
+
+def word_count_dict(paragraph):
+    word_list = get_clean_word_list(paragraph)
+
+    # clean up double quotes, lowercase
+    for i, word in enumerate(word_list):
+        word_list[i] = word.lower()
+
+    word_count_dict = {} # dict()
+
+    for word in word_list:
+        if word not in word_count_dict.keys():
+            word_count_dict[word] = 0
+        word_count_dict[word] += 1
+
+    return word_count_dict
+
+# Here you use .items() to traverse the dict you've made
+for word, count in word_count_dict(rand_paragraph).items():
+    print(f'{word}: {count}')
+```
 
 
 ### func(arg, arg)['name']
@@ -224,8 +430,43 @@ ________________________________________________________________________________
   value (op): value to be returned if key is not found; defaults to None<br>
   
 #### .items()<br>
-  returns a view object that displays a list of dict key, value tuple pairs
-  
+  returns a view object that displays a list of dict key, value tuple pairs<br>
+  can use to get a list of tuples for key/value pairs in a dict
+``` python
+              fruit_dict = {'apple': 20, 'peach':15, 'pineapple':3}
+
+              tup_list = list(fruit_dict.items())
+
+              print(tup_list)
+```
+
+#### .keys()
+  returns list of keys
+
+#### .values()
+  returns list of values
+
+``` python
+      fruit_dict = {'apple': 20, 'peach':15, 'pineapple':3}
+
+      keys_list = fruit_dict.keys()
+      print(keys_list)
+
+      values_list = fruit_dict.values()
+      print(values_list)
+```
+
+#### .pop('some_key'[, default])
+  'some_key' = key which is to be searched for removal<br>
+  default = value which is to be returned when key is not in dict<br>
+  returns: 
+      If key is found - removed/popped element from the dictionary<br>
+      If key is not found - value specified as the second argument (default)<br>
+      If key is not found and default argument is not specified - KeyError exception is raised<br>
+
+
+#### del d['some_key']
+  deletes key/value pair at 'some_key'
 ______________________________________________________________________________________________________
 
 # Variables
