@@ -1,113 +1,115 @@
 # What is Data Science?
-###data types:
+### data types:
  working with text and data<br>
-###variables:
+### variables:
  storing data <br>
-###lists:
+### lists:
  working with data in an ordered collection<br>
-###dictionaries:
+### dictionaries:
  representing data as a collection of attributes<br>
-###loops and iteration:
+### loops and iteration:
  repeating a sequence of instructions <br>
-###data visualization:
+### data visualization:
  using plots to display data <br>
-###functions:
+### functions:
  defining and running specific procedures in code <br>
 
-###to find all methods for a data type:
+### to find all methods for a data type:
   print(dir(datatype))
 
-####isinstance(elem, type)
+#### isinstance(elem, type)
   returns bool True if same type
   returns bool False if different type
 
-####type(elem)
+#### type(elem)
   returns <class type>
 ______________________________________________________________________________________________________
 
 # String Methods
-###Strings are sequences
+### Strings are sequences
     Recall from earlier that strings are a sequence type in Python, but they are also immutable. This means they can be iterated through and sliced, for example, but do not support indexed reassignment or the del statement.
 
-###declaring a string
+### declaring a string
   string = ''
   string = ""
   casting  -- > str(element_to_be_cast)
 
-###repetition
+### repetition
   string*num repeats string num number of times
 
-###containment
+### containment
   "p" in "python"
     returns True
 
-###[instance of dataype].[method]()
+### [instance of dataype].[method]()
 
-####str.upper() <br>
+#### str.upper() <br>
 
-####str.lower() <br>
+#### str.lower() <br>
 
-####str.title() <br>
-
-####str.endswith()  <br>
+#### str.title() <br>
+ 
+#### str.endswith()  <br>
   returns a boolean <br>
-####str.replace(x, y)<br>
+
+#### str.replace(x, y)<br>
   ie. "Homer" ->> replace('o', 'O')<br>
       returns "HOmer"<br>
       
-####help(str)<br>
+#### help(str)<br>
    returns directory of str commands (exit w/ q)<br>
-####str.capitalize()<br>
 
-####string slicing:<br>
+#### str.capitalize()<br>
+
+#### string slicing:<br>
   [2:4] = [incl, ecl]<br>
   ie. in carrot, would return 'rr'<br>
   [4] would return 4th char<br>
  
-####concatenation:<br>
+#### concatenation:<br>
   'xyz' + '123'<br>
   returns 'xyz123'<br>
   
-####fstring: print(f"... {} ...")
+#### fstring: print(f"... {} ...")
 
-####.split([separator [, maxsplit]])<br>
+#### .split([separator [, maxsplit]])<br>
   braks up str at specified separator<br>
   returns list of stirngs<br>
   seperator (optional): if not specified, any whitespace<br>
   maxsplit (optional): defines max number of splits; default is -1 meaning no limit<br>
   
-####.count(substring, start=..., end=...)<br>
+#### .count(substring, start=..., end=...)<br>
   searches substring and returns # of instances
 
-####.format<br>
+#### .format<br>
   "single_and_escaped = 'I won\'t use anything other than single quotes!"
 
-####.isspace()
+#### .isspace()
   checks if character is a whitespace char liek ' ', '\t', '\n', '\r' etc
 
-####.index(substring[, start[, end]])<br>
+#### .index(substring[, start[, end]])<br>
   substring: to be search in str<br>
   start/end: (optional) within str [st:end]<br>
   returns lowed index in str where found<br>
 
-####.isalnum()<br>
+#### .isalnum()<br>
   returns True is all char alphaneumeric<br>
   
-####.isalpha()<br>
+#### .isalpha()<br>
   returns True if all char in alphabets<br>
 
-####.is digit()
+#### .is digit()
 
-####.isnumeric()
+#### .isnumeric()
 
-####.join(iterable)<br>
+#### .join(iterable)<br>
   "".join(lst)
-  
+
   returns str by joining all elelments of an iterable, separated by a str separator<br> (concatenates)<br>
   data types: list, tuple, string, dict, set<br>
   file obj + obj defined with __iter__() or __getitem()__ method<br>
 
-####.replace(old, new[, count])<br>
+#### .replace(old, new[, count])<br>
   returns copy of str where all occuranes of a subsring are replaced by another substring<br>
   old: substring to replace<br>
   new: new substring to replace old<br>
@@ -132,23 +134,23 @@ indicies = range(len(list))<br>
 list(fliter9func, iterable)): returns True elements into array<br>
 accessing multpile elements: list[0:2] = list[incl:excl]<br>
 
-####.append(item)<br>
+#### .append(item)<br>
   item added to end of th elist<br>
   can be any datatype<br>
   returns None
   
-####.clear()<br>
+#### .clear()<br>
   removes all items from the list<br>
   
-####.copy()<br>
+#### .copy()<br>
   copies old list to new list, changes to new list won't effect old list (unlike =)<br>
   also can use slicing (new_list = list[:])
   
-####.count(element)<br>
+#### .count(element)<br>
   returns # of times element is in list<br>
   can be used with nested lists and tuples
   
-####.extend(iterable)<br>
+#### .extend(iterable)<br>
   adds all the elements of an iterable (list, tuple, string, etc) to the end of the list<br>
   Modifies original list, does not return value<br>
   also can append all elements to list using: + +=<br>
@@ -158,7 +160,7 @@ accessing multpile elements: list[0:2] = list[incl:excl]<br>
     a = [1, 2, 3, 4]<br>
   merges rather than append<br>
   
-####.index(element, start, end)<br>
+#### .index(element, start, end)<br>
   returns the index of the specified element in the list<br>
   element: element to be searched<br>
   start (op): start from this index<br>
@@ -166,29 +168,29 @@ accessing multpile elements: list[0:2] = list[incl:excl]<br>
   returns index of given element OR ValueEror if not found<br>
   *only returns 1st occurane of element
   
-####.insert(i, elem)<br>
+#### .insert(i, elem)<br>
   inserts element into list @ ith index<br>
   all elements after elem shifted to right<br>
   returns None, updates current list<br>
   *can insert Tuples as elements
   
-####.pop(index)<br>
+#### .pop(index)<br>
   removes and returns an element at a given index from a list<br>
   if index not passed, returns for (-1)
   
-####.remove(element)<br>
+#### .remove(element)<br>
   removes the first matching element (which is passed as an arg) from list<br>
   throws error if element DNE<br>
   returns None, or error<br>
   if need to delete elements based on index, use .pop()
   
-####.reverse()<br>
+#### .reverse()<br>
   reverses the elements of the list<br>
   returns None<br>
   can also do with slicing operator: reversed_list = list [::-1]<br>
   accessing items in reversed order: for x in reversed(list):<br>
   
-####.sort(key=..., reverse=...)<br>
+#### .sort(key=..., reverse=...)<br>
   key (op): func that serves as key for he sort comparison<br>
   reverse (op): if True, sorted list is sorted in descending order<br>
   changes original list<br>
@@ -200,26 +202,28 @@ accessing multpile elements: list[0:2] = list[incl:excl]<br>
 ______________________________________________________________________________________________________
 
 # Dictionaries
-####func(arg, arg)['name']
 
-####.clear()<br>
+
+### func(arg, arg)['name']
+
+#### .clear()<br>
   removes all items from dict
   
-####.copy()<br>
+#### .copy()<br>
   returns shallow copy of dict<br>
   doesn't change original dict (unlike =)
   
-####.fromkeys(sequence[, value])<br>
+#### .fromkeys(sequence[, value])<br>
   creates new dict from given sequence of elements with value provided by user<br>
   sequence: sequence of elements which is to be used as keys for new dict<br>
   value (op): value which is set to each element of dict<br>
   
-####.get(key[, value])<br>
+#### .get(key[, value])<br>
   returns value for specific key, if key is in dict<br>
   key: key to be searched in dict<br>
   value (op): value to be returned if key is not found; defaults to None<br>
   
-####.items()<br>
+#### .items()<br>
   returns a view object that displays a list of dict key, value tuple pairs
   
 ______________________________________________________________________________________________________
@@ -230,18 +234,18 @@ ________________________________________________________________________________
 
 # Scalar Types
 ints, floats, bools, str, None, complex, bytes<br>
-###scalar type:
+### scalar type:
  holds a single value (vs. collection type, which holds many values and can be changed w/p id value change -> ie. not being destroyed and remade)<br>
   scalar types in python are immutable, they are detroyed and remade everytime the value is reassigned<br>
   
-###int<br>
+### int<br>
   can represent a value that is countable<br>
   are only positive or negative whole numbers<br>
   discrete values<br>
   int(x) to cast an int or round a float<br>
   indexing with square brackets requires int<br>
   
-###float<br>
+### float<br>
   decimal numbers<br>
   measurments, result of division, or calculations involving other floats<br>
   continuous values<br>
@@ -253,7 +257,7 @@ ints, floats, bools, str, None, complex, bytes<br>
     **dont really understand this<br>
     can cause issues with relaly small numbers<br>
     
-###boolean<br>
+### boolean<br>
   True or False<br>
   1 or 0<br>
   full or empty values<br>
@@ -261,12 +265,12 @@ ints, floats, bools, str, None, complex, bytes<br>
   not negates bool<br>
   result of <, >, >=, <=, == is always boolean<br>
   
-###string<br>
+### string<br>
   collection of characters<br>
   concatenation +<br>
   str() to cast<br>
   
-###None<br>
+### None<br>
   describes the absence of a value<br>
   functions auto return None if no return statement or empty return statement<br>
   None can be used as a placeholder<br>
@@ -275,7 +279,7 @@ ints, floats, bools, str, None, complex, bytes<br>
 ______________________________________________________________________________________________________
 
 # Numpy
-###numpy arrays<br>
+### numpy arrays<br>
   CAN ONLY INCLUDE A SINGLE DATA TYPE<br>
   when + doesnt concatenate, adds each instance to its respecive pair<br>
   ie. [1,2,3] + [1,2,3] = [2,4,6]<br>
@@ -291,7 +295,7 @@ ________________________________________________________________________________
   ** subsetting ([xyz])<br>
   ie. array([100:111]) returns enteries from index 100 to 110 inclusive<br>
   
-###2D numpy arrays<br>
+### 2D numpy arrays<br>
   .shape => returns (rows, cols); not a method, is an attribute<br>
   array[0][2] == array[0,2]<br>
   calling just cols or rows is easy -> array[r:c] with slicing telling python to include all<br>
@@ -300,7 +304,7 @@ ________________________________________________________________________________
   Can create an array of conversions by row/col and multiply<br>
     ie. array with 3 cols, new array with conversion factors in 3 cols, multiply to convert whole array<br>
 
-###basic statistics<br>
+### basic statistics<br>
   np.mean(array[:,0])<br>
   np.median(array[:])<br>
   np.corrcoef(array1, array2). see if 2 array rows/cols are correlaed<br>
@@ -320,35 +324,35 @@ ________________________________________________________________________________
 != result type: boool; "not equal to"<br>
 < <= > >=<br>
 and, or ->> bool op used to preform logical conjuction<br>
-####not:
+#### not:
  returns True when op is false orr 0, vice versa<br>
-####del: 
+#### del: 
 removes item/element at a specified index location from lis, not returned; takes index as arg, deletes itema at index<br>
-####int: 
+#### int: 
 num w/o decimal, +/-<br>
-####float:
+#### float:
  num with decimal, +/- (always returned by /)<br>
-####True:
+#### True:
  bool(1)<br>
-####False:
+#### False:
  0, None, len() ie. [] or " ", bool(0)<br>
 
 # Basic Operators
-###// floor division<br>
+### // floor division<br>
   if either is a float, will return a float<br>
 
-###% modulus<br>
+### % modulus<br>
   trial division: see if divides in evenly, common step to find primes and all divisors of 
 
-###given num<br>
+### given num<br>
   parity: mod 2, whether an integer is even or odd  <br>
   if either is a float, will return a float<br>
   
-###Order of op<br>
+### Order of op<br>
   PEMDAS, M includes %<br>
   if same precedence, left to right<br>
   
-###Logical ops<br>
+### Logical ops<br>
   and, or, !<br>
   btwise: & = and, |. = or, ~ = not<br>
     exclusive or (^) = only when 1 op is true (vs or where bith can be true<br>
@@ -356,7 +360,7 @@ num w/o decimal, +/-<br>
   bitwise 1st, then logical op<br>
   excl or befor or<br>
   
-###comparison ops<br>
+### comparison ops<br>
   < > <= >= == !=
 
   ______________________________________________________________________________________________________
@@ -368,7 +372,7 @@ else ==> under all other conditions<br>
 
   ______________________________________________________________________________________________________
 
-#GitHub Commands Terminal
+# GitHub Commands Terminal
 
   ______________________________________________________________________________________________________
 
@@ -376,15 +380,15 @@ else ==> under all other conditions<br>
 # List Basics
 A list is a collection of arbitrary objects, often called an array in other programming languages. The contents of a list can be thought of as ordered, in that a list guarantees that its contents are numerically indexed. The items, or elements of a list can be accessed by the numeric index. In Python, a list is mutable in the sense that its contents can be rearranged, replaced, or deleted. A list can be nested to arbitrary depth. The list datatype is the primary construct on which you will perform iteration, or going item-by-item across a data structure.<br>
 
-###LISTS ARE MUTABLE
+### LISTS ARE MUTABLE
 
-###creating a list:
+### creating a list:
   some_list = []
   some_list = [x,y,z]
   some_list = list()
   some_list = list(some_other_collection)
 
-###calling an elem from a list:
+### calling an elem from a list:
   my_list[index_of_elem]
 
   note:
@@ -392,10 +396,10 @@ A list is a collection of arbitrary objects, often called an array in other prog
     
     indexing begins at 0
 
-###changing elem in list at index:
+### changing elem in list at index:
     <list_name>[<index_of_element_to_change>] = <new_value_for_index>
 
-###concatenating lists:
+### concatenating lists:
   can concatenate lists with '+' operator
 
       ``` python
@@ -408,13 +412,13 @@ A list is a collection of arbitrary objects, often called an array in other prog
       print(concatenated_list)
       ```
 
-###list memembership:
+### list memembership:
   elem in lst
       checks if in list, and returns bool True if so
   elem not in lst
       checks if in list, returns bool True if not
 
-###list slicing:
+### list slicing:
   sublst[start:stop]
   sublst[negative_start: negative_stop]
 
@@ -427,14 +431,14 @@ A list is a collection of arbitrary objects, often called an array in other prog
       negative_stop is also a negative index after which our "slice" will end
       Thus, negative_start will be included in the sublist, but negative_stop will not be
 
-###nested lists:
+### nested lists:
   ####creating:
   ``` python
       nested_list_example_2 = [list(), list(), list()]
     # OR
       nested_list_example_3 = [[], [], []]
   ```
-  ####accessing:
+  #### accessing:
     ```python
     nested_list = [['a', 'b', 'c'], [1, 2, 3]]
 
@@ -463,15 +467,15 @@ A list is a collection of arbitrary objects, often called an array in other prog
     print(sublist)
   ```
 
-###unpacking a list:
+### unpacking a list:
   some_list = ['pig', 'boar', 'elephant']
   a, b, c = some_list
 
   #a = 'pig, b = 'boar', c='elephant'
 
-###functions and methods
+### functions and methods
 
-####range([start], stop[, step]):
+#### range([start], stop[, step]):
   start: Starting number of the sequence.
   stop: Generate numbers up to, but not including this number.
   step: Difference between each number in the sequence.
@@ -482,79 +486,79 @@ A list is a collection of arbitrary objects, often called an array in other prog
   All parameters can be positive or negative.
   range() (and Python in general) is 0-index based, meaning list indexes start at 0, not 1. eg. The syntax to access the first element of a list is mylist[0]. Therefore the last integer generated by range() is up to, but not including, stop. For example range(0, 5) generates integers from 0 up to, but not including, 5.
 
-####.copy()
+#### .copy()
   equivalent to:
   lst[:]
 
-####.index(elem)
+#### .index(elem)
   returns the index of first instance of element in list
 
-####.append(elem)
+#### .append(elem)
   adds element to end of list
 
-####.extend(lst)
+#### .extend(lst)
   extends current list by argument list
 
-####.remove(elem)<br>
+#### .remove(elem)<br>
   removes first instance of element
 
-####del<br>
+#### del<br>
   del lst[i]<br>
   deleted element at specified index
 
-####len(lst)
+#### len(lst)
   returns the length of the argument list
 
-####sum(lst)
+#### sum(lst)
   returns numeric sum of all elements in list
 
-####sorted(lst)
+#### sorted(lst)
   returns a sorted version of argument list <br>
   MUST BE SAVED TO NEW VAR TO REMAIN PERMENANT, does not make any permenant changes to original list
 
-####.sort()
+#### .sort()
   sorts original list permenantly
 
 
-####reversed(lst)
+#### reversed(lst)
   returns reversed version of argument list <br>
   MUST BE SAVED TO NEW VAR TO REMAIN PERMENANT, does not make any permenant changes to original list
   Also, must be cast to list with [] as returns reversed obj rather than list
 
-####.reverse()
+#### .reverse()
   reverses original list permenantly
 
-####max(lst)
+#### max(lst)
   returns max num in list
 
-####min(lst)
+#### min(lst)
   returns min num in list
 
-####any(lst)
+#### any(lst)
   returns bool True if any elem in list are truthy
 
-####all(lst)
+#### all(lst)
   returns bool True only if ALL elem in list are truthy
 
-####.pop()
+#### .pop()
   removes last elem in list, returns elem
 
-####.count(elem)
+#### .count(elem)
   returns count of elem in lst
 
-####enumerate
+#### enumerate
   for i, elem in enumerate(list):
     iterates through both i and elem in list
   
-####zip 
+#### zip 
   for a,b,c in zip(list_1, list_2, range(len(list_3))):
     #iterates through parallel lists at same time
 
 ______________________________________________________________________________________________________
 
 
-#accumulators:
-  ###PATTERN:
+# accumulators:
+  ### PATTERN:
       Initialize an accumulator variable
 
       Repeat:
@@ -562,7 +566,7 @@ ________________________________________________________________________________
 
       When the above loop terminates, accumulator has the correct value
 
-###examples:
+### examples:
 ```python
 #int:
 num_list = [1, 2, 3, 4, 5]
@@ -641,37 +645,37 @@ for item in mixed_list:
 ```
 ______________________________________________________________________________________________________
 
-#iteration with for loops
+# iteration with for loops
   initialize a variable to be accumulated, then in a for/while loop accumulate as you iterate through
 
-  for char in string:
+  #### for char in string:
     #iterates through every character in string
 
-  for word in phrase:
+  #### for word in phrase:
     #iterates through every word in sentence as separated by whitespace chars 
 
-  for num in range(0, 100):
+  #### for num in range(0, 100):
     #iterates through nums 0-99
   
-  for i in range(len(list)):
+  #### for i in range(len(list)):
     #iterated through indexes of list from 0 to len(list)
   
-  for elem in list:
+  #### for elem in list:
     #iterates through all elements of list
 
-  for i, elem in enumerate(list):
+  #### for i, elem in enumerate(list):
     iterates through both i and elem in list
   
-  for a,b,c in zip(list_1, list_2, range(len(list_3))):
+  #### for a,b,c in zip(list_1, list_2, range(len(list_3))):
     #iterates through parallel lists at same time
 
 ______________________________________________________________________________________________________
 
-#break, continue, pass
+# break, continue, pass
 
   break and continue are commonly used within loops to either bypass some code or exit the loop itself. There are a number of reasons you may want to do this, either to optimize your code, or to prevent further or unnecessary calculation. In general pass can be seen as a placeholder for code in order to allow your function or loop to run.
 
-###break out of for loop:
+### break out of for loop:
 ```python
 # this for loop will exit after 50
 for num in range(100):
@@ -703,7 +707,7 @@ while True: # note, infinite loop
         break
 ```
 
-###continue for skipping loops:
+### continue for skipping loops:
 ```python
 not_squares = []
 
@@ -725,14 +729,14 @@ for num in range(2, 101):
 print(not_squares)
 ```
 
-###pass:
+### pass:
 used as a place holder in an unfinished function
 
 ______________________________________________________________________________________________________
 
-#while loops
+# while loops
 
-##You should only use a while loop when the number of iterations of the loop is not known. 
+## You should only use a while loop when the number of iterations of the loop is not known. 
 
 ```python
 def greatest_common_divisor(num_1, num_2):
@@ -774,7 +778,7 @@ while x < 3:
     loops += 1
   ```
 
-###while loop using conditional check:
+### while loop using conditional check:
   while True: do something
     x = 20
 
@@ -783,7 +787,7 @@ while x < 3:
 
         x -= 1
 
-another example:
+#### another example:
   def get_menu_item():
     menu = '''Choose an item:
               (1) broccoli
@@ -806,7 +810,7 @@ while cont == 'y':
 
 print(orders)
 
-###open-ended problems:
+### open-ended problems:
 ```python
 from random import choice
 
@@ -848,7 +852,7 @@ for i, count in enumerate(counts):
     print('{:4d}: {}'.format(i, '*' * count))
 ```
 
-###for or while?
+### for or while?
     The previous lessons have talked extensively about when to not use a while loop. Essentially, avoid using while loops, unless they are specifically appropriate.
 
     ####while for menus and open-ended problems
