@@ -1,3 +1,25 @@
+View wiki for this info broken down by section
+
+
+# Table of Contents
+## What is Data Science?
+## String Methods
+## Jupyter Notebooks
+## Dictionaries
+## Variables
+## Scalar Types
+## numpy
+## Numbers and Booleans
+## Control Flow
+## GitHub Command Basics
+## Lists
+## List Basics
+## accumulators
+## iteration with for loops
+## break, continue, pass
+## while loops
+______________________________________________________________________________________________________
+
 # What is Data Science?
 ### data types:
  working with text and data<br>
@@ -125,79 +147,8 @@ shortcut menu: h<br>
 type code: esc mode + y<br>
 markdown: esc mode + m<br>
 shift + enter<br>
-______________________________________________________________________________________________________
 
-# Lists
-x = list(y), x = [] ->> defining a list<br>
-list[x] ->> call x index from list<br>
-indicies = range(len(list))<br>
-list(fliter9func, iterable)): returns True elements into array<br>
-accessing multpile elements: list[0:2] = list[incl:excl]<br>
 
-#### .append(item)<br>
-  item added to end of th elist<br>
-  can be any datatype<br>
-  returns None
-  
-#### .clear()<br>
-  removes all items from the list<br>
-  
-#### .copy()<br>
-  copies old list to new list, changes to new list won't effect old list (unlike =)<br>
-  also can use slicing (new_list = list[:])
-  
-#### .count(element)<br>
-  returns # of times element is in list<br>
-  can be used with nested lists and tuples
-  
-#### .extend(iterable)<br>
-  adds all the elements of an iterable (list, tuple, string, etc) to the end of the list<br>
-  Modifies original list, does not return value<br>
-  also can append all elements to list using: + +=<br>
-  list slicing: <br>
-    a = [1,2]; b = [3,4]<br>
-    a[len(a):] = b<br>
-    a = [1, 2, 3, 4]<br>
-  merges rather than append<br>
-  
-#### .index(element, start, end)<br>
-  returns the index of the specified element in the list<br>
-  element: element to be searched<br>
-  start (op): start from this index<br>
-  end (op): search up to this index<br>
-  returns index of given element OR ValueEror if not found<br>
-  *only returns 1st occurane of element
-  
-#### .insert(i, elem)<br>
-  inserts element into list @ ith index<br>
-  all elements after elem shifted to right<br>
-  returns None, updates current list<br>
-  *can insert Tuples as elements
-  
-#### .pop(index)<br>
-  removes and returns an element at a given index from a list<br>
-  if index not passed, returns for (-1)
-  
-#### .remove(element)<br>
-  removes the first matching element (which is passed as an arg) from list<br>
-  throws error if element DNE<br>
-  returns None, or error<br>
-  if need to delete elements based on index, use .pop()
-  
-#### .reverse()<br>
-  reverses the elements of the list<br>
-  returns None<br>
-  can also do with slicing operator: reversed_list = list [::-1]<br>
-  accessing items in reversed order: for x in reversed(list):<br>
-  
-#### .sort(key=..., reverse=...)<br>
-  key (op): func that serves as key for he sort comparison<br>
-  reverse (op): if True, sorted list is sorted in descending order<br>
-  changes original list<br>
-  no return<br>
-  to return sorted list (with original unchanged) use sorted()<br>
-  ie. list.sort(key = len, reverse = true/false)<br>
-      OR sorted(list, key=len)<br>
   
 ______________________________________________________________________________________________________
 
@@ -617,6 +568,77 @@ else ==> under all other conditions<br>
 
   ______________________________________________________________________________________________________
 
+# Lists
+x = list(y), x = [] ->> defining a list<br>
+list[x] ->> call x index from list<br>
+indicies = range(len(list))<br>
+list(fliter9func, iterable)): returns True elements into array<br>
+accessing multpile elements: list[0:2] = list[incl:excl]<br>
+
+#### .append(item)<br>
+  item added to end of th elist<br>
+  can be any datatype<br>
+  returns None
+  
+#### .clear()<br>
+  removes all items from the list<br>
+  
+#### .copy()<br>
+  copies old list to new list, changes to new list won't effect old list (unlike =)<br>
+  also can use slicing (new_list = list[:])
+  
+#### .count(element)<br>
+  returns # of times element is in list<br>
+  can be used with nested lists and tuples
+  
+#### .extend(iterable)<br>
+  adds all the elements of an iterable (list, tuple, string, etc) to the end of the list<br>
+  Modifies original list, does not return value<br>
+  also can append all elements to list using: + +=<br>
+  list slicing: <br>
+    a = [1,2]; b = [3,4]<br>
+    a[len(a):] = b<br>
+    a = [1, 2, 3, 4]<br>
+  merges rather than append<br>
+  
+#### .index(element, start, end)<br>
+  returns the index of the specified element in the list<br>
+  element: element to be searched<br>
+  start (op): start from this index<br>
+  end (op): search up to this index<br>
+  returns index of given element OR ValueEror if not found<br>
+  *only returns 1st occurane of element
+  
+#### .insert(i, elem)<br>
+  inserts element into list @ ith index<br>
+  all elements after elem shifted to right<br>
+  returns None, updates current list<br>
+  *can insert Tuples as elements
+  
+#### .pop(index)<br>
+  removes and returns an element at a given index from a list<br>
+  if index not passed, returns for (-1)
+  
+#### .remove(element)<br>
+  removes the first matching element (which is passed as an arg) from list<br>
+  throws error if element DNE<br>
+  returns None, or error<br>
+  if need to delete elements based on index, use .pop()
+  
+#### .reverse()<br>
+  reverses the elements of the list<br>
+  returns None<br>
+  can also do with slicing operator: reversed_list = list [::-1]<br>
+  accessing items in reversed order: for x in reversed(list):<br>
+  
+#### .sort(key=..., reverse=...)<br>
+  key (op): func that serves as key for he sort comparison<br>
+  reverse (op): if True, sorted list is sorted in descending order<br>
+  changes original list<br>
+  no return<br>
+  to return sorted list (with original unchanged) use sorted()<br>
+  ie. list.sort(key = len, reverse = true/false)<br>
+      OR sorted(list, key=len)<br>
 
 # List Basics
 A list is a collection of arbitrary objects, often called an array in other programming languages. The contents of a list can be thought of as ordered, in that a list guarantees that its contents are numerically indexed. The items, or elements of a list can be accessed by the numeric index. In Python, a list is mutable in the sense that its contents can be rearranged, replaced, or deleted. A list can be nested to arbitrary depth. The list datatype is the primary construct on which you will perform iteration, or going item-by-item across a data structure.<br>
